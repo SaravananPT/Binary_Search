@@ -1,0 +1,25 @@
+a = []
+n=int(input("Enter the upper limit:"))
+for i in range(n):
+    b=int(input(f"Enter the list of numbers {i+1} :"))
+    a.append(b)
+a = sorted (a)
+print (a)
+Search_Number = c = int(input("Enter the number to search:"))
+n = len(a)
+lb = 0
+ub = n-1
+while lb <= ub:
+    mid = (lb + ub) // 2
+    mid_val = a[mid]
+
+    if mid_val == c:
+        print('The number',c,'is in',mid,'th position')
+        print(f"Number {c} found at index {mid}.")
+        break
+    elif c > mid_val:
+        lb= mid + 1
+    else:
+        ub = mid - 1
+else:
+    print(f'Number {c} is not in the list {a}')
